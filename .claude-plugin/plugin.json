@@ -1,0 +1,20 @@
+{
+  "name": "biz-check",
+  "version": "1.0.0",
+  "description": "Audit the business side of a project against its code and docs: logic, MVP scope, viability, pricing, personas, competition, risk, KPIs, onboarding.",
+  "author": {
+    "name": "Seonghwan Cho",
+    "url": "https://github.com/josh3021"
+  },
+  "homepage": "https://github.com/josh3021/biz-check",
+  "repository": "https://github.com/josh3021/biz-check",
+  "license": "MIT",
+  "keywords": [
+    "business",
+    "audit",
+    "mvp",
+    "pricing",
+    "unit-economics",
+    "kpi"
+  ]
+}

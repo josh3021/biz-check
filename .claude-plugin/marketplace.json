@@ -1,0 +1,14 @@
+{
+  "name": "josh3021",
+  "description": "Agent skills by josh3021. Currently: biz-check, a business audit for your codebase.",
+  "owner": {
+    "name": "Seonghwan Cho"
+  },
+  "plugins": [
+    {
+      "name": "biz-check",
+      "source": "./",
+      "description": "Audit the business side of a project against its code and docs."
+    }
+  ]
+}
