@@ -17,4 +17,4 @@ AGENTS.md fallback line:
 
 Other machines: copy this folder (or clone it as a git repo) and recreate the links above.
 
-Language: the first run in each project asks which language to use and stores it in `.biz/config` (`lang: <code>`). Change it with the `lang=<code>` argument.
+Language and level: the first run in each project asks which language and which level (`easy`, `standard`, `deep`) to use and stores them in `.biz/config` (`lang: <code>`, `level: <level>`). Change them with the `lang=<code>` argument or by passing a level.

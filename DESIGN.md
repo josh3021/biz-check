@@ -17,6 +17,7 @@ One skill file set that Claude Code, Codex, Gemini and Grok can all run to audit
 - Location: source `~/.agents/skills/biz-check/`, symlink `~/.claude/skills/biz-check`.
 - Cache in the project's `.biz/`: `config` (language), `facts.md`, `assumptions.md`, `report.md` (marker blocks per module), `state` (last synced commit). Later runs look only at `git diff --stat <state>..HEAD`.
 - Language: stored per project in `.biz/config`, because sandboxed agents (e.g. Codex workspace-write) can't write outside the project. First run asks; non-interactive runs use the request's language.
-- Output: per module `item | verdict (✅/⚠️/❌/—) | evidence | next action`. `quick` = table, `deep` = + calculations and alternatives.
-- Read budget ~40KB per full scan, ≤5 batched command calls (measured with Codex on a real project: input tokens 544k → 229k).
+- Output: per module `item | verdict (✅/⚠️/❌/—) | evidence | next action`. Three levels, stored per project in `.biz/config`: `easy` = plain sentences with no development terms, for planners and other non-developers; `standard` = the table (formerly `quick`); `deep` = table + calculations, alternatives, a re-check of failed items and a cross-module action plan.
+- Levels change presentation only. Judging and evidence rules are identical, and `report.md` always keeps the evidence table, so an `easy` run still leaves developers something to verify and switching level needs no re-scan.
+- Read budget ~40KB per full scan, ≤5 batched command calls (`deep`: +20KB and 2 calls to re-check failed items) (measured with Codex on a real project: input tokens 544k → 229k).
 - Numbers without evidence are marked "assumption" with a formula.
